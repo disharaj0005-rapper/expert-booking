@@ -59,7 +59,7 @@ export default function ExpertDetail() {
   }, [id]);
 
   useEffect(() => {
-    const socket = io(import.meta.env.VITE_API_URL || 'http://localhost:5000');
+    const socket = io(import.meta.env.VITE_API_URL);
     socket.on('slotBooked', ({ expertId, date, timeSlot }) => {
       if (expertId === id) {
         // Trigger flash animation
